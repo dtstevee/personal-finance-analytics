@@ -1,11 +1,11 @@
-# 💸 Personal Finance Analytics System
+# Personal Finance Analytics System
 
 A modular **Personal Finance Analytics System** that ingests multi-source credit card transactions, normalizes and stores them, and generates **monthly, yearly, and predictive spending insights**.  
 Built with **Python + SQL-ready architecture**, designed for **automation, extensibility, and future AI integration**.
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 Managing personal finances across multiple credit cards is messy:
 - Different schemas (Amex / Chase / Discover)
@@ -26,9 +26,9 @@ The system is designed like a **production-grade analytics pipeline**, not a one
 
 ---
 
-## 🧠 Core Features
+## Core Features
 
-### ✅ Data Ingestion & Normalization
+### Data Ingestion & Normalization
 - Supports multiple banks with different schemas
 
 - - Deterministic transaction ID generation:
@@ -36,33 +36,33 @@ The system is designed like a **production-grade analytics pipeline**, not a one
 - Duplicate ranking
 - Hash-based encoding
 
-### ✅ Persistent Financial Memory
+### Persistent Financial Memory
 - Incremental ingestion without overwriting history
 - Enables:
 - Monthly spend tracking
 - Year-over-year comparisons
 - Long-term behavioral analysis
 
-### ✅ Analytics & Reporting
+### Analytics & Reporting
 - Monthly and yearly spend summaries
 - Category-level aggregation
 - Rare-category handling
 - Report-ready structured outputs
 
-### ✅ Predictive Modeling
+### Predictive Modeling
 - Time-aware feature engineering
 - Validation-first modeling approach
 - Next-month spending forecasts
 - Designed for extensible ML strategies
 
-### ✅ Agent-Based Architecture
+### Agent-Based Architecture
 - Analytics logic separated from data access
 - Prediction layer cannot directly access raw transaction files
 - Enforces clean abstraction boundaries (industry-style design)
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```bash
 ├── ingestion.py     # Data loading, normalization, ID assignment
