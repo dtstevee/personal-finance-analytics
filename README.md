@@ -1,77 +1,93 @@
 # Personal Finance Analytics System
 
-A modular **Personal Finance Analytics System** that ingests multi-source credit card transactions, normalizes and stores them, and generates **monthly, yearly, and predictive spending insights**.  
-Built with **Python + SQL-ready architecture**, designed for **automation, extensibility, and future AI integration**.
+A modular **end-to-end personal finance analytics system** that ingests multi-source credit card transactions, normalizes and stores them, and generates **monthly, yearly, and predictive spending insights**.
+
+The system is designed with a **Python-first, SQL-ready architecture**, emphasizing automation, extensibility, and long-term financial memory.
 
 ---
 
 ## Project Overview
 
-Managing personal finances across multiple credit cards is messy:
-- Different schemas (Amex / Chase / Discover)
-- Duplicate transactions
-- Inconsistent categories
-- No long-term financial memory
+Managing personal finances across multiple credit cards quickly becomes messy due to:
 
-This project addresses these challenges by building a **Personal Finance Analytics System** that:
+- Inconsistent schemas across providers (e.g. Amex & Discover)
+- Duplicate or repeated transactions
+- No unified category system
+- Lack of historical memory for long-term analysis
 
-1. Ingests raw transaction files from multiple sources  
-2. Normalizes and assigns stable transaction IDs  
-3. Stores historical data with persistent memory  
-4. Analyzes spending patterns by time and category  
-5. Predicts future monthly spending  
-6. Prepares clean outputs for dashboards and reports  
-
-The system is designed like a **production-grade analytics pipeline**, not a one-off script.
+This project addresses these challenges by building a **persistent analytics pipeline** that transforms raw transaction data into structured insights and forward-looking budget forecasts.
 
 ---
 
-## Core Features
+## Key Features
 
-### Data Ingestion & Normalization
-- Supports multiple banks with different schemas
+- **Multi-source ingestion & normalization**  
+  Standardizes heterogeneous transaction schemas into a unified canonical format.
 
-- - Deterministic transaction ID generation:
-- Base key construction
-- Duplicate ranking
-- Hash-based encoding
+- **Deduplication & transaction identity tracking**  
+  Ensures consistent transaction history across repeated uploads.
 
-### Persistent Financial Memory
-- Incremental ingestion without overwriting history
-- Enables:
-- Monthly spend tracking
-- Year-over-year comparisons
-- Long-term behavioral analysis
+- **Persistent financial memory**  
+  Maintains historical transaction panels for longitudinal analysis.
 
-### Analytics & Reporting
-- Monthly and yearly spend summaries
-- Category-level aggregation
-- Rare-category handling
-- Report-ready structured outputs
+- **Analytics & reporting**  
+  Generates monthly and yearly spending breakdowns by category.
 
-### Predictive Modeling
-- Time-aware feature engineering
-- Validation-first modeling approach
-- Next-month spending forecasts
-- Designed for extensible ML strategies
+- **Predictive budgeting**  
+  Forecasts next-period category-level spending using regression-based models.
 
-### Agent-Based Architecture
-- Analytics logic separated from data access
-- Prediction layer cannot directly access raw transaction files
-- Enforces clean abstraction boundaries (industry-style design)
+- **Interactive dashboard**  
+  Exposes insights through a multi-page Streamlit interface.
+
+---
+
+## System Architecture
+
+The system follows a layered design:
+
+- **Ingestion Layer**  
+  Handles schema alignment, date parsing, and transaction deduplication.
+
+- **Storage Layer**  
+  Manages persistent transaction memory and derived analytical panels.
+
+- **Analytics Layer**  
+  Performs aggregation, feature engineering, and budget prediction.
+
+- **UI Layer**  
+  Presents results via an interactive Streamlit dashboard.
+
+This separation allows individual components to evolve independently (e.g., swapping CSV storage for SQL).
 
 ---
 
 ## Project Structure
 
-```bash
-├── ingestion.py     # Data loading, normalization, ID assignment
-├── storage.py       # Persistent storage layer (CSV → SQL-ready)
-├── report.py        # Monthly & yearly reporting logic
-├── predict.py       # Predictive modeling & forecasting
-├── agent.py         # Orchestrates tools & enforces access control
-├── data/
-│   ├── raw/         # Original credit card statements
-│   ├── processed/  # Cleaned & merged datasets
-│   └── outputs/    # Reports & predictions
-└── README.md
+```text
+personal-finance-analytics/
+│
+├── app.py                 # Streamlit application entry point
+├── core/                  # Core analytics & agent logic
+│   ├── ingestion.py
+│   ├── storage.py
+│   ├── report.py
+│   ├── predict.py
+│   └── agent.py
+│
+├── pages/                 # Streamlit multi-page UI
+│   ├── Data_Breakdown.py
+│   └── Budget_Prediction.py
+│
+├── data/                 
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+
+Data Handling & Privacy
+	•	No real personal or financial data is included in this repository.
+	•	If transactions.csv is not found, the system automatically initializes a new local dataset with the required schema.
+	•	All user-specific data files are excluded via .gitignore.
+
+This design ensures privacy while maintaining full reproducibility.
+
