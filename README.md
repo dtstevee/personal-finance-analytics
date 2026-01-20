@@ -1,8 +1,8 @@
 # Personal Finance Analytics System
 
-A modular **end-to-end personal finance analytics system** that ingests multi-source credit card transactions, normalizes and stores them, and generates **monthly, yearly, and predictive spending insights**.
+A modular **end-to-end personal finance analytics system** that ingests Amex & Discover credit card transactions, normalizes and stores them, and generates **monthly, yearly, and predictive spending insights**.
 
-The system is designed with a **Python-first, SQL-ready architecture**, emphasizing automation, extensibility, and long-term financial memory.
+The system is designed with a **Python-based, storage-agnostic architecture**, emphasizing automation, extensibility, and long-term financial memory.
 
 ---
 
@@ -33,7 +33,7 @@ This project addresses these challenges by building a **persistent analytics pip
 - **Analytics & reporting**  
   Generates monthly and yearly spending breakdowns by category.
 
-- **Predictive budgeting**  
+- **Predictive budgeting (In Progress)**  
   Forecasts next-period category-level spending using regression-based models.
 
 - **Interactive dashboard**  
