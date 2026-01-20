@@ -1,8 +1,8 @@
 # Personal Finance Analytics System
 
-A modular **end-to-end personal finance analytics system** that ingests Amex & Discover credit card transactions, normalizes and stores them, and generates **monthly, yearly, and predictive spending insights**.
+A modular **end-to-end personal finance analytics system** that ingests Amex & Discover credit card transactions, normalizes and stores them, and generates **monthly and yearly spending insights**.
 
-The system is designed with a **Python-based, storage-agnostic architecture**, emphasizing automation, extensibility, and long-term financial memory.
+The system is built with a **Python-based, storage-agnostic architecture**, emphasizing automation, extensibility, and long-term financial memory.
 
 ---
 
@@ -15,7 +15,7 @@ Managing personal finances across multiple credit cards quickly becomes messy du
 - No unified category system
 - Lack of historical memory for long-term analysis
 
-This project addresses these challenges by building a **persistent analytics pipeline** that transforms raw transaction data into structured insights and forward-looking budget forecasts.
+This project addresses these challenges by building a **persistent analytics pipeline** that transforms raw transaction data into structured, reusable insights.
 
 ---
 
@@ -33,9 +33,6 @@ This project addresses these challenges by building a **persistent analytics pip
 - **Analytics & reporting**  
   Generates monthly and yearly spending breakdowns by category.
 
-- **Predictive budgeting (In Progress)**  
-  Forecasts next-period category-level spending using regression-based models.
-
 - **Interactive dashboard**  
   Exposes insights through a multi-page Streamlit interface.
 
@@ -52,7 +49,7 @@ The system follows a layered design:
   Manages persistent transaction memory and derived analytical panels.
 
 - **Analytics Layer**  
-  Performs aggregation, feature engineering, and budget prediction.
+  Performs aggregation and feature engineering for reporting.
 
 - **UI Layer**  
   Presents results via an interactive Streamlit dashboard.
@@ -66,28 +63,34 @@ This separation allows individual components to evolve independently (e.g., swap
 ```text
 personal-finance-analytics/
 │
-├── app.py                 # Streamlit application entry point
+├── Home.py                # Streamlit application entry point
 ├── core/                  # Core analytics & agent logic
 │   ├── ingestion.py
 │   ├── storage.py
 │   ├── report.py
-│   ├── predict.py （developing in progress)
 │   └── agent.py
 │
 ├── pages/                 # Streamlit multi-page UI
-│   ├── Data_Breakdown.py
-│   └── Budget_Prediction.py (developing in progress)
+│   └── Data_Breakdown.py
 │
-├── data/                 
+├── data/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
 ```
+## How to Use
 
-## Data Handling & Privacy
-- No real personal or financial data is included in this repository.
-- If transactions.csv is not found, the system automatically initializes a new local dataset with the required schema.
-- All user-specific data files are excluded via .gitignore.
+### 1. Clone the repository
+```bash
+git clone https://github.com/dtstevee/personal-finance-analytics.git
+cd personal-finance-analytics
+```
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
-This design ensures privacy while maintaining full reproducibility.
-
+### 3.Run the application
+```bash
+streamlit run Home.py
+```
