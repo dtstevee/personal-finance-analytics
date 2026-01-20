@@ -15,3 +15,7 @@ Test.ipynb
 # OS / IDE
 .DS_Store
 *.workspace
+
+# Work in Progress
+core/predict.py
+pages/Budget_Prediction.py
