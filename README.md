@@ -71,23 +71,23 @@ personal-finance-analytics/
 │   ├── ingestion.py
 │   ├── storage.py
 │   ├── report.py
-│   ├── predict.py
+│   ├── predict.py （developing in progress)
 │   └── agent.py
 │
 ├── pages/                 # Streamlit multi-page UI
 │   ├── Data_Breakdown.py
-│   └── Budget_Prediction.py
+│   └── Budget_Prediction.py (developing in progress)
 │
 ├── data/                 
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
-
-Data Handling & Privacy
-	•	No real personal or financial data is included in this repository.
-	•	If transactions.csv is not found, the system automatically initializes a new local dataset with the required schema.
-	•	All user-specific data files are excluded via .gitignore.
+## Data Handling & Privacy
+- No real personal or financial data is included in this repository.
+- If transactions.csv is not found, the system automatically initializes a new local dataset with the required schema.
+- All user-specific data files are excluded via .gitignore.
 
 This design ensures privacy while maintaining full reproducibility.
 
